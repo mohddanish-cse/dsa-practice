@@ -1,6 +1,10 @@
 # DSA using Java
 
-## [Binary Search](Binary_Search.md)
+### [Count Digits](count_digits.md)
+<hr>
+
+### [Linear Search](Linear_Search.md)
+### [Binary Search](Binary_Search.md)
 
 <!-- ## [Binary Search](Binary_Search.md)
  -->
