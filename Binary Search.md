@@ -140,3 +140,5 @@ class Solution {
     }
 }
 ```
+
+![image](https://user-images.githubusercontent.com/63279839/150181285-5d7f56c9-ecb5-4dd1-a72b-428aa53a9ded.png)
