@@ -1,6 +1,4 @@
 ## Binary Search
-### Contents
-[1. Binary Search](https://github.com/mohddanish-cse/dsa-practice/blob/main/Binary_Search.md#agnostic-binary-search)
 
 ### Binary Search
 
@@ -32,7 +30,7 @@ public class MyClass {
 public class MyClass {
     public static void main(String args[]) {
       int a[] = {10,9,8,6,5};
-      int key =5;
+      int key = 5;
       int ans = ABS(a,key);
       System.out.println(ans);
     }
