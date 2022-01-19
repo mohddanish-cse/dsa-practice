@@ -1,4 +1,30 @@
 ## Binary Search
+### Contents
+[1. Binary Search](https://github.com/mohddanish-cse/dsa-practice/blob/main/Binary_Search.md#agnostic-binary-search)
+
+### Binary Search
+
+```
+public class MyClass {
+    public static void main(String args[]) {
+      int a[] = {1,4,6,7,8};
+      int key = 5;
+      int ans = BS(a,key);
+      System.out.println(ans);
+    }
+    static int BS(int[] a, int key) {
+        int start=0;
+        int end=a.length -1;
+        while(start<=end) {
+            int mid=start+(end-start)/2;
+            if(a[mid]==key) return mid;
+            else if(key < a[mid]) end=mid-1;
+            else start = mid+1;
+        }
+        return -1;
+    }
+}
+```
 
 ### Agnostic Binary Search
 
