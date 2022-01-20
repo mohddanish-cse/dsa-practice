@@ -15,9 +15,12 @@ public class MyClass {
         int end = a.length -1;
         while(start<=end) {
             int mid=start+(end-start)/2;
-            if(a[mid]==target) return mid;
-            else if(target < a[mid]) end=mid-1;
-            else start = mid+1;
+            if(target < a[mid]) 
+	    	end=mid-1;
+            else if (target > a[mid])
+	    	start = mid+1;
+	    else
+	    	return mid;
         }
         return -1;
     }
@@ -142,3 +145,44 @@ class Solution {
 ```
 
 ![image](https://user-images.githubusercontent.com/63279839/150181285-5d7f56c9-ecb5-4dd1-a72b-428aa53a9ded.png)
+
+### 5. Find position of an element in a sorted array of infinite numbers
+![image](https://user-images.githubusercontent.com/63279839/150290832-8a9e1fb9-af15-4675-8989-267b70fbf359.png)
+
+![image](https://user-images.githubusercontent.com/63279839/150291441-27133f21-7d80-45b0-9f67-37274513ed59.png)
+![image](https://user-images.githubusercontent.com/63279839/150291753-c59a7e41-5bec-4888-a35b-af1866029410.png)
+
+```
+public class InfiniteArray {
+    public static void main(String args[]) {
+      int[] arr={3,5,7,9,10,90,100,130,140,160,170};
+      int target = 90;
+      System.out.println(ans(arr,target));
+    }
+    static int ans(int[] arr, int target) {
+        int start = 0;
+        int end = 1;
+        
+        //condition for the target to lie in the range
+        while (target > arr[end]) {
+            int temp = end + 1;
+            //double the box value
+            end = end + (end - start + 1) * 2;
+            start = temp;
+        }
+        return binarySearch(arr,target,start,end);
+    }
+    static int binarySearch(int[] a, int target,int start, int end) {
+        while(start <= end) {
+            int mid=start+(end-start)/2;
+            if(target < a[mid]) 
+	    	end=mid-1;
+            else if (target > a[mid])
+	    	start = mid+1;
+	        else
+	    	    return mid;
+        }
+        return -1;
+    }
+}
+```
