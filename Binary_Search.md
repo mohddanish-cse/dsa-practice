@@ -186,3 +186,28 @@ public class InfiniteArray {
     }
 }
 ```
+### 6. Peak Index in a Mountain Array
+https://leetcode.com/problems/peak-index-in-a-mountain-array/
+![image](https://user-images.githubusercontent.com/63279839/150391058-8f6006f0-f32a-4269-96d6-91a0f5b2d132.png)
+![image](https://user-images.githubusercontent.com/63279839/150391390-197bce91-6abe-4d5a-9745-7ea851543b88.png)
+![image](https://user-images.githubusercontent.com/63279839/150391687-22cdefd7-9576-44ef-98ba-ec2d0b386e18.png)
+![image](https://user-images.githubusercontent.com/63279839/150391883-e919e5bf-b803-4ab8-8e39-9142bcea953e.png)
+
+**Solution:**
+```
+class Solution {
+    public int peakIndexInMountainArray(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            
+            if(arr[mid] > arr[mid+1])
+                end = mid;
+            else if(arr[mid] < arr[mid+1])
+                start = mid + 1;
+        }
+        return start;
+    }
+}
+```
